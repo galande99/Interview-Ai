@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cookieParser())
 app.use(
   cors({
-    origin: "interview-ai-beta-five.vercel.app",
+    origin: "https://interview-ai-beta-five.vercel.app/",
     credentials: true,
   }),
 );
