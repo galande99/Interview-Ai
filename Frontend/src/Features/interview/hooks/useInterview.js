@@ -35,7 +35,7 @@ const getReportById = async (interviewId) => {
   setLoading(true);
   let response = null;
   try {
-    response = await getInterviewReportById(interviewId);
+    const response = await getInterviewReportById(interviewId);
     setReport(response?.interviewReport ?? null);
   } catch (error) {
     console.log(error);
@@ -50,7 +50,7 @@ const getReports = async () => {
   setLoading(true);
   let response = null;
   try {
-    response = await getAllInterviewReports();
+    const response = await getAllInterviewReports();
     setReports(response?.interviewReports ?? []);
   } catch (error) {
     console.log(error);
