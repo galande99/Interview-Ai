@@ -32,34 +32,33 @@ export const useInterview = () => {
 }
 
 const getReportById = async (interviewId) => {
-    setLoading(true)
-    let response = null
-    try {
-        const response = await getInterviewReportById(interviewId)
-        setReport(response?.interviewReport ?? null)
-    } catch (error) {
-        console.log(error)
-    } finally {
-        setLoading(false)
-    } 
-    
-     return response?.interviewReport ?? null
-}
+  setLoading(true);
+  let response = null;
+  try {
+    response = await getInterviewReportById(interviewId);
+    setReport(response?.interviewReport ?? null);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    setLoading(false);
+  }
 
+  return response?.interviewReport ?? null;
+};
 
 const getReports = async () => {
-    setLoading(true)
-    let response = null
-    try {
-        const response = await getAllInterviewReports()
-        setReports(response?.interviewReports ?? [])
-    } catch (error) {
-        console.log(error)
-    } finally {
-        setLoading(false)
-    }
-  return response?.interviewReports ?? []
-}
+  setLoading(true);
+  let response = null;
+  try {
+    response = await getAllInterviewReports();
+    setReports(response?.interviewReports ?? []);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    setLoading(false);
+  }
+  return response?.interviewReports ?? [];
+};
 
 
 const getResumePdf = async (interviewReportId) => {
