@@ -115,7 +115,8 @@ const Interview = () => {
           <p className="section-pretitle">Interview Review</p>
           <h1 className="interview-title">{report.title}</h1>
           <p className="interview-description">
-            A structured interview preparation dashboard with recommended questions, performance score, and an action plan.
+            A structured interview preparation dashboard with recommended
+            questions, performance score, and an action plan.
           </p>
         </div>
         <div className="score-chip">
@@ -147,8 +148,6 @@ const Interview = () => {
                 </button>
               ))}
             </div>
-            <button onClick={()=> {getResumePdf(interviewId)}} className="button primary-button">Download Resume</button>
-
           </aside>
           <main className="panel content-panel">
             <div className="content-topbar">
@@ -160,11 +159,15 @@ const Interview = () => {
             </div>
             <div className="content-description">
               <p>
-                Review the most important interview questions and answers generated for your role, with focus items and skill gaps visible on the right.
+                Review the most important interview questions and answers
+                generated for your role, with focus items and skill gaps visible
+                on the right.
               </p>
             </div>
-            {activeSection === "technicalQuestions" && renderQuestions(report.technicalQuestions)}
-            {activeSection === "behaviouralQuestions" && renderQuestions(report.behaviouralQuestions)}
+            {activeSection === "technicalQuestions" &&
+              renderQuestions(report.technicalQuestions)}
+            {activeSection === "behaviouralQuestions" &&
+              renderQuestions(report.behaviouralQuestions)}
             {activeSection === "preparationPlan" && renderPlan()}
           </main>
 
